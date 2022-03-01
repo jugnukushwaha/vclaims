@@ -1,10 +1,9 @@
 package com.app.vclaims.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,10 +20,11 @@ public class UserController {
 	@Autowired
 	private UserServiceImpl userSer;
 	
-	@GetMapping("/login")
-	public List<User> getUser()
+	@GetMapping("/login/{email}")
+	public String getUser(@PathVariable(value="email") String email)
 	{
-		return userSer.getUser();
+		String password= userSer.getUserByEmail(email);
+		return password;
 	}
 	
 	@PostMapping("/register")
@@ -33,5 +33,7 @@ public class UserController {
 		System.out.println("test works");
 		userSer.regUser(user);
 	}
+	
+	
 
 }

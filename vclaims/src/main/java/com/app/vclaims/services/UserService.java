@@ -8,5 +8,7 @@ public interface UserService {
 	public List<User> getUser();
 
 	public void regUser(User user);
+	
+	public String getUserByEmail(String email);
 
 }
