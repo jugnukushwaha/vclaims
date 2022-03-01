@@ -36,7 +36,7 @@ public class User {
 		super();
 	}
 
-	public User(int userid, String firstname, String lastname, String email, long contact, char gender, String dob,
+	public User(int userid, String firstname, String lastname, String email, long contact, String gender, String dob,
 			String password) {
 		super();
 		this.userid = userid;
@@ -89,11 +89,11 @@ public class User {
 		this.contact = contact;
 	}
 
-	public char getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(char gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
