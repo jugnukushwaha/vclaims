@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
@@ -16,7 +17,8 @@ import com.sun.istack.NotNull;
 public class PolicyDetails {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@SequenceGenerator(name="sequenceGenerator", initialValue = 10004 , allocationSize=1 , sequenceName="policy_seq_generator")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "sequenceGenerator")
 	@Column(name="Policy_no")
 	@NotNull
 	private int policyId;

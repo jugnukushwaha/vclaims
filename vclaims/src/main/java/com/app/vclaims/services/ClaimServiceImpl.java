@@ -40,17 +40,17 @@ public class ClaimServiceImpl implements ClaimService {
 	@Override
 	public void claim(ClaimDetails claim,MultipartFile file) throws IOException  {
 		
-		file.transferTo(new File("C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures"+file.getOriginalFilename()+claim.getClaimId()));
+		file.transferTo(new File("/Users/jugnukumar/Desktop/VClaim_Images"+file.getOriginalFilename()+claim.getClaimId()));
 		claimDetailsRep.save(claim);
 		
 		
 	}
 
-	@Override
-	public void claim(String claimId, MultipartFile file) throws IOException {
-		System.out.println("about to transfer file to given location");
-		file.transferTo(new File("C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures"+file.getOriginalFilename()+claimId));
-         System.out.println(file.getName());
-	}
+//	@Override
+//	public void claim(String claimId, MultipartFile file) throws IOException {
+//		System.out.println("about to transfer file to given location");
+//		file.transferTo(new File("C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures"+file.getOriginalFilename()+claimId));
+//         System.out.println(file.getName());
+//	}
 
 }

@@ -6,8 +6,9 @@ import org.springframework.data.repository.query.Param;
 
 import com.app.vclaims.entity.User;
 
-public interface UserDao extends JpaRepository<User, Integer> {
-  
-	@Query(value="SELECT Password from User where Email=:emailId",nativeQuery=true)
-	public String findByemail(@Param("emailId") String emailId);
+public interface UserDetailsDaoRepository extends JpaRepository<User, Integer> {
+	
+	@Query(value="SELECT * from User where Email=:emailId",nativeQuery=true)
+	public User findByemail(@Param("emailId") String emailId);
+
 }

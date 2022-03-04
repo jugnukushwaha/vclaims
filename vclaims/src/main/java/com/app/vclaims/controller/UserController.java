@@ -21,10 +21,11 @@ public class UserController {
 	private UserServiceImpl userSer;
 	
 	@GetMapping("/login/{email}")
-	public String getUser(@PathVariable(value="email") String email)
+	public User getUser(@PathVariable(value="email") String email)
 	{
-		String password= userSer.getUserByEmail(email);
-		return password;
+		System.out.println("Inside email");
+		User user= userSer.getUserByEmail(email);
+		return user;
 	}
 	
 	@PostMapping("/register")
