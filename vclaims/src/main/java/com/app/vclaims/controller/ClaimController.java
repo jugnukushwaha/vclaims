@@ -31,17 +31,20 @@ public class ClaimController {
 	}
 	
 	@PostMapping("/claim")
-	public void myclaim(@RequestPart ClaimDetails claimdetail,@RequestPart("file") MultipartFile fileMultipartFile ) throws IOException {
-		claimServiceImpl.claim(claimdetail,fileMultipartFile);
+	public void myclaim(@RequestBody ClaimDetails claimdetail) {
+		claimServiceImpl.claim(claimdetail);
 		
 	}
 	
-	@PostMapping("/picture")
-	public void picture(@RequestParam("claimId") String claimId ,@RequestParam("file") MultipartFile fileMultipartFile ) throws IOException {
-		System.out.println("inside api");
-		claimServiceImpl.claim(claimId,fileMultipartFile);
-		
-	}
+	
+	/*
+	 * @PostMapping("/picture") public void picture(@RequestParam("claimId") String
+	 * claimId, @RequestParam("file") MultipartFile fileMultipartFile) throws
+	 * IOException { System.out.println("inside api");
+	 * claimServiceImpl.claim(claimId, fileMultipartFile);
+	 * 
+	 * }
+	 */
 	
 	@GetMapping("/claim/{userId}")
 	public List<String> getClaimsOfUser(@PathVariable(value="userId") int userId){ 
@@ -51,5 +54,15 @@ public class ClaimController {
 		
 		
 	}
+	
+	@PostMapping("/picture")
+	public void picture(@RequestParam("file") MultipartFile fileMultipartFile)
+			throws IOException {
+		System.out.println("inside api");
+		claimServiceImpl.uploadFileForClaim( fileMultipartFile);
+
+	}
+	
+	
 
 }

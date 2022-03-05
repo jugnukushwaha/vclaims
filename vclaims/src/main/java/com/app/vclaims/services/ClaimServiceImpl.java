@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,19 +39,32 @@ public class ClaimServiceImpl implements ClaimService {
 	
 
 	@Override
-	public void claim(ClaimDetails claim,MultipartFile file) throws IOException  {
+	public void claim(ClaimDetails claim) {
 		
-		file.transferTo(new File("C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures"+file.getOriginalFilename()+claim.getClaimId()));
 		claimDetailsRep.save(claim);
 		
 		
 	}
 
-	@Override
-	public void claim(String claimId, MultipartFile file) throws IOException {
-		System.out.println("about to transfer file to given location");
-		file.transferTo(new File("C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures"+file.getOriginalFilename()+claimId));
-         System.out.println(file.getName());
-	}
+	
+	/*
+	 * @Override public void claim(String claimId, MultipartFile file) throws
+	 * IOException { System.out.println("about to transfer file to given location");
+	 * file.transferTo(new File(
+	 * "C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures" +
+	 * file.getOriginalFilename() + claimId)); System.out.println(file.getName()); }
+	 */
 
+	@Override
+	public void uploadFileForClaim(MultipartFile file) throws IOException  {
+		
+		file.transferTo(new File("C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures"+file.getOriginalFilename()));
+		//claimDetailsRep.save(claim);
+		
+		
+	}
+	
+	
+	
+	
 }

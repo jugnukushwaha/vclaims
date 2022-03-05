@@ -12,13 +12,15 @@ import com.app.vclaims.entity.ClaimDetails;
 
 public interface ClaimService {
 
-	public void claim(ClaimDetails claim,MultipartFile file)throws IOException ;
+	public void claim(ClaimDetails claim) ;
 	
 	public List<String> getClaimbyId(int userId);
 	
 	public List<ClaimDetails> getClaim();
 
-	public void claim(String claimId, MultipartFile file)  throws IOException ;
+//	public void claim(String claimId, MultipartFile file)  throws IOException ;
+//	
+	public void uploadFileForClaim(MultipartFile file) throws IOException ;
 	
-
+	
 }
