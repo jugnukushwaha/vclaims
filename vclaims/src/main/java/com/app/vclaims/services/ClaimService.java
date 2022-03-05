@@ -19,8 +19,9 @@ public interface ClaimService {
 	public List<ClaimDetails> getClaim();
 
 //	public void claim(String claimId, MultipartFile file)  throws IOException ;
-//	
+	
 	public void uploadFileForClaim(MultipartFile file) throws IOException ;
 	
+
 	
 }

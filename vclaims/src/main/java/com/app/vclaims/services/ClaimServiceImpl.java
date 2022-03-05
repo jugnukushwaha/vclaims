@@ -41,19 +41,13 @@ public class ClaimServiceImpl implements ClaimService {
 	@Override
 	public void claim(ClaimDetails claim) {
 		
+
 		claimDetailsRep.save(claim);
 		
 		
 	}
 
-	
-	/*
-	 * @Override public void claim(String claimId, MultipartFile file) throws
-	 * IOException { System.out.println("about to transfer file to given location");
-	 * file.transferTo(new File(
-	 * "C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures" +
-	 * file.getOriginalFilename() + claimId)); System.out.println(file.getName()); }
-	 */
+
 
 	@Override
 	public void uploadFileForClaim(MultipartFile file) throws IOException  {
