@@ -22,6 +22,6 @@ public interface ClaimService {
 	
 	public void uploadFileForClaim(MultipartFile file) throws IOException ;
 	
-
+    public void updateClaimStatusToClose(String claimId);
 	
 }

@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,6 +59,14 @@ public class ClaimServiceImpl implements ClaimService {
 		
 		
 	}
+
+	@Override
+	@Transactional
+	public void updateClaimStatusToClose(String claimId) {
+		
+		claimDetailsRep.updateClaimStatusToClose(claimId);
+	}
+	
 	
 	
 	

@@ -2,18 +2,16 @@ package com.app.vclaims.entity;
 
 
 
-import java.awt.Image;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.sun.istack.NotNull;
 
@@ -22,7 +20,7 @@ import com.sun.istack.NotNull;
 public class ClaimDetails {
 
 	@Column(name="Policy_no")
-	//@NotNull
+	@NotNull
 	private int policyNumber;
 	
 //	@Id
@@ -50,17 +48,8 @@ public class ClaimDetails {
 	@Column(name="imgUrl")
     private String vehiclePhoto;
 	
-	/*
-	 * @Column(name="imgUrl") private Byte[] image;
-	 * 
-	 * 
-	 * 
-	 * public Byte[] getImage() { return image; }
-	 * 
-	 * 
-	 * public void setImage(Byte[] byteObjects) { this.image = byteObjects; }
-	 * 
-	 */
+	
+	
 	@Column(name="Status")
 	@NotNull
 	private String status;
@@ -125,7 +114,7 @@ public class ClaimDetails {
 		this.status = status;
 	}
 
-
+    
 	
 
 
