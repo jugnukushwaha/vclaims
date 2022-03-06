@@ -16,7 +16,7 @@ public class Transaction {
 
 	@Column(name="Policy_no")
 	@NotNull
-	private int policyNumber;
+	private int policyId;
 	
 	@Id @GeneratedValue(generator="system-uuid")
 	@GenericGenerator(name="system-uuid", strategy = "uuid")
@@ -27,13 +27,24 @@ public class Transaction {
 	@Column(name="Ins_amount")
 	@NotNull
 	private int insuranceAmount;
-
-	public int getPolicyNumber() {
-		return policyNumber;
+	
+	public Transaction() {
+		super();
 	}
 
-	public void setPolicyNumber(int policyNumber) {
-		this.policyNumber = policyNumber;
+	public Transaction(int policyId, String transactionId, int insuranceAmount) {
+		super();
+		this.policyId = policyId;
+		this.transactionId = transactionId;
+		this.insuranceAmount = insuranceAmount;
+	}
+	
+	public int getPolicyId() {
+		return policyId;
+	}
+
+	public void setPolicyId(int policyId) {
+		this.policyId = policyId;
 	}
 
 	public String getTransactionId() {
@@ -54,20 +65,12 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return "Transaction [policyNumber=" + policyNumber + ", transactionId=" + transactionId + ", insuranceAmount="
+		return "Transaction [policyId=" + policyId + ", transactionId=" + transactionId + ", insuranceAmount="
 				+ insuranceAmount + "]";
 	}
 
-	public Transaction(int policyNumber, String transactionId, int insuranceAmount) {
-		super();
-		this.policyNumber = policyNumber;
-		this.transactionId = transactionId;
-		this.insuranceAmount = insuranceAmount;
-	}
 
-	public Transaction() {
-		super();
-	}
+	
 	
 	
 	

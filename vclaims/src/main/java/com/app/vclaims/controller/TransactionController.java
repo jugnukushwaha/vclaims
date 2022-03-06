@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.vclaims.entity.Transaction;
 import com.app.vclaims.services.TransactionServiceImpl;
 
-//@CrossOrigin("*")
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/vclaims")
 public class TransactionController {

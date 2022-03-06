@@ -17,8 +17,8 @@ import com.sun.istack.NotNull;
 public class PolicyDetails {
 
 	@Id
-	@SequenceGenerator(name="sequenceGenerator", initialValue = 10004 , allocationSize=1 , sequenceName="policy_seq_generator")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "sequenceGenerator")
+//	@SequenceGenerator(name="sequenceGenerator", initialValue = 10004 , allocationSize=1 , sequenceName="policy_seq_generator")
+//	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "sequenceGenerator")
 	@Column(name="Policy_no")
 	@NotNull
 	private int policyId;
