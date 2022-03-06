@@ -4,12 +4,8 @@ package com.app.vclaims.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 
 import com.sun.istack.NotNull;
 
@@ -18,7 +14,7 @@ import com.sun.istack.NotNull;
 public class ClaimDetails {
 
 	@Column(name="Policy_no")
-	//@NotNull
+	@NotNull
 	private int policyNumber;
 	
 //	@Id
@@ -94,6 +90,8 @@ public class ClaimDetails {
 	public void setVehiclePhoto(String vehiclePhoto) {
 		this.vehiclePhoto = vehiclePhoto;
 	}
+
+
 
 	@Override
 	public String toString() {
