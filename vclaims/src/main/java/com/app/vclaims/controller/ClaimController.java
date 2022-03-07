@@ -39,7 +39,7 @@ public class ClaimController {
 	
 	@GetMapping("/claim/{userId}")
 	public List<String> getClaimsOfUser(@PathVariable(value="userId") int userId){ 
-		
+		System.out.println("calling claim controller");
 		return claimServiceImpl.getClaimbyId(userId);			
 		
 	}
