@@ -6,9 +6,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import javax.transaction.Transactional;
 
-import org.json.JSONObject;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -34,27 +33,18 @@ public class ClaimServiceImpl implements ClaimService {
 		 return claims;
 	}
 	
-	
-		
-	
-		
-	
 
 	@Override
 	public void claim(ClaimDetails claim) {
-		
-
+		System.out.println("Inside Claim");
 		claimDetailsRep.save(claim);
-		
-		
 	}
-
 
 
 	@Override
 	public void uploadFileForClaim(MultipartFile file) throws IOException  {
 		
-		file.transferTo(new File("C:\\Users\\manee\\OneDrive\\Desktop\\Project\\pictures"+file.getOriginalFilename()));
+		file.transferTo(new File("/Users/jugnukumar/Documents/FullStackTraining/Assignments/VehicleClaimProject/VehicleClaimFinalProject/src/assets/Images/vclaim_cloud/"+file.getOriginalFilename()));
 		//claimDetailsRep.save(claim);
 		
 		
