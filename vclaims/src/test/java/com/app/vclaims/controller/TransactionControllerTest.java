@@ -37,7 +37,7 @@ class TransactionControllerTest {
 		ResponseEntity<String> response = restTemplate.exchange(createURLWithPort("/vclaims/getTransaction"), HttpMethod.GET,
 				entity, String.class);
 
-		String expected = "T5000001";
+		String expected = "40289d147f67b32d017f67cd5e840001";
 		System.out.println(response.getBody());
 		System.out.println("above is response");
 

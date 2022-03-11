@@ -26,6 +26,9 @@ public class ClaimApprovalStatusServiceImpl implements ClaimApprovalStatusServic
 		claimStatusApproval.save(claimApproval);
 	
 	}
+	public String getReason(String claimId) {
+		return claimStatusApproval.getReasonById(claimId);
+	}
 
 
 

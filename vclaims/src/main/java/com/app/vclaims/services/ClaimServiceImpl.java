@@ -52,11 +52,17 @@ public class ClaimServiceImpl implements ClaimService {
 
 	@Override
 	@Transactional
-	public void updateClaimStatusToClose(String claimId) {
+	public void updateClaimStatusToAccept(String claimId) {
 		
-		claimDetailsRep.updateClaimStatusToClose(claimId);
+		claimDetailsRep.updateClaimStatusToAccept(claimId);
 	}
 	
+	@Override
+	@Transactional
+	public void updateClaimStatusToReject(String claimId) {
+		
+		claimDetailsRep.updateClaimStatusToReject(claimId);
+	}
 	
 	
 	

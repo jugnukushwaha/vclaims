@@ -35,10 +35,10 @@ class PolicyControllerTest {
 
 		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
 
-		ResponseEntity<String> response = restTemplate.exchange(createURLWithPort("/vclaims/getPolicies/101"), HttpMethod.GET,
+		ResponseEntity<String> response = restTemplate.exchange(createURLWithPort("/vclaims/getPolicies/121"), HttpMethod.GET,
 				entity, String.class);
 
-		String expected = "10002";
+		String expected = "11312";
 		System.out.println(response.getBody());
 		System.out.println("above is response");
 

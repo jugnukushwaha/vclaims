@@ -34,10 +34,10 @@ class ClaimControllerTest {
 
 		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
 
-		ResponseEntity<String> response = restTemplate.exchange(createURLWithPort("/vclaims/claim/101"), HttpMethod.GET,
+		ResponseEntity<String> response = restTemplate.exchange(createURLWithPort("/vclaims/claim/121"), HttpMethod.GET,
 				entity, String.class);
 
-		String expected = "C1001";
+		String expected = "C_121314";
 		System.out.println(response.getBody());
 		System.out.println("above is response");
 

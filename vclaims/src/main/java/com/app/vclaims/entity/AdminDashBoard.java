@@ -6,18 +6,14 @@ import java.util.Date;
 public class AdminDashBoard {
 
 	private String claimId;
-	
-	
+
 	private int policyNo;
-	
-	
 
 	private String vType;
 
-	
 	private String status;
+	private String imgUrl;
 
-	
 	private String firstName;
 
 	private String lastName;
@@ -120,15 +116,19 @@ public class AdminDashBoard {
 		this.insuranceStartDate = insuranceStartDate;
 	}
 
-	@Override
-	public String toString() {
-		return "AdminDashBoard [claimId=" + claimId + ", policyNo=" + policyNo + ", vType=" + vType + ", status="
-				+ status + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", vehicleBrand=" + vehicleBrand + ", insurancePeriod=" + insurancePeriod + ", vehicleNo=" + vehicleNo
-				+ ", insuranceStartDate=" + insuranceStartDate + "]";
+	public AdminDashBoard() {
+		super();
 	}
 
-	public AdminDashBoard(String claimId, int policyNo, String vType, String status, String firstName,
+	public String getImgUrl() {
+		return imgUrl;
+	}
+
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	public AdminDashBoard(String claimId, int policyNo, String vType, String status, String imgUrl, String firstName,
 			String lastName, String email, String vehicleBrand, String insurancePeriod, String vehicleNo,
 			Date insuranceStartDate) {
 		super();
@@ -136,6 +136,7 @@ public class AdminDashBoard {
 		this.policyNo = policyNo;
 		this.vType = vType;
 		this.status = status;
+		this.imgUrl = imgUrl;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -145,12 +146,12 @@ public class AdminDashBoard {
 		this.insuranceStartDate = insuranceStartDate;
 	}
 
-	public AdminDashBoard() {
-		super();
+	@Override
+	public String toString() {
+		return "AdminDashBoard [claimId=" + claimId + ", policyNo=" + policyNo + ", vType=" + vType + ", status="
+				+ status + ", imgUrl=" + imgUrl + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
+				+ email + ", vehicleBrand=" + vehicleBrand + ", insurancePeriod=" + insurancePeriod + ", vehicleNo="
+				+ vehicleNo + ", insuranceStartDate=" + insuranceStartDate + "]";
 	}
-	
-	
 
-	
-	
 }

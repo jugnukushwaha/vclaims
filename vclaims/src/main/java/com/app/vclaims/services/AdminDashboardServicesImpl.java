@@ -33,7 +33,8 @@ public class AdminDashboardServicesImpl implements AdminDashboardServices {
 		                    t.get(7, String.class),
 		                    t.get(8, String.class), 
 		                    t.get(9, String.class), 
-		                    t.get(10, Date.class)
+		                    t.get(10, String.class), 
+		                    t.get(11, Date.class)
 		                    ))
 		            .collect(Collectors.toList());
 		return adminDashBoard;

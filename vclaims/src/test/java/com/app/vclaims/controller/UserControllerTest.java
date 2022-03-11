@@ -35,10 +35,10 @@ class UserControllerTest {
 
 		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
 
-		ResponseEntity<String> response = restTemplate.exchange(createURLWithPort("/vclaims/login/Nishanth@gmail.com"), HttpMethod.GET,
+		ResponseEntity<String> response = restTemplate.exchange(createURLWithPort("/vclaims/login/jugnu@gmail.com"), HttpMethod.GET,
 				entity, String.class);
 
-		String expected = "105";
+		String expected = "121";
 		System.out.println(response.getBody());
 		System.out.println("above is response");
 

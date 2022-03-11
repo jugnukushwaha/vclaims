@@ -13,10 +13,15 @@ public interface ClaimDetailsDaoRepository extends JpaRepository<ClaimDetails, I
 
 	@Query(value="SELECT Claim_id from Claim_details where User_id=:Id",nativeQuery=true)
 	public List<String> getClaimbyId(@Param("Id") int userId );
-
+	
 	@Modifying
-	@Query(value="update claim_details SET status='close' where claim_Id=:claimId",nativeQuery=true)
-	public void updateClaimStatusToClose(@Param("claimId") String claimId);
+	@Query(value="update claim_details SET status='accept' where claim_Id=:claimId",nativeQuery=true)
+	public void updateClaimStatusToAccept(@Param("claimId") String claimId);
+	
+	@Modifying
+	@Query(value="update claim_details SET status='reject' where claim_Id=:claimId",nativeQuery=true)
+	public void updateClaimStatusToReject(@Param("claimId") String claimId);
+	
 	
 	
 
